@@ -9,7 +9,6 @@
   <br/>
   <p class="main-text">See comments and ratings other students made about <a href="/Courses">Courses</a>
   or <a href="/Profs">Professors!</a></p>
-  <br/>
   <p class="main-text">To make your own comments/ratings, please <a href="/Login">Log in</a> or
   <a href="/Signup">Sign up</a>.</p>
   <br/>
