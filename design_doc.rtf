@@ -1,0 +1,167 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Design Doc\
+\
+Framework:\
+Frontend: Vue + ElementUI, Vuex, Axios\
+Backend: Springboot + Mybatis\
+Data: MySQL\
+\
+Cmu-all:\
+- README\
+- client (vue frontend)\
+- manage (vue frontend)\
+- server (springboot backend)\
+\
+Dataset: (* means key, & means optional)\
+- Admin\
+	- id*\
+	- username\
+	- password\
+	- &avator\
+- User (all user for the application)\
+	- id*\
+	- username\
+	- password\
+	- &photo_path\
+	- email\
+	- &grade (2021? 2022? 2023?)\
+	- &College (MCS? SCS? CIT?)\
+	- &Major\
+	- &Minor\
+	- &self intro\
+	- &course taken\
+- Course\
+	- id* \
+	- course number (5 digit course number)\
+	- course name\
+	- prof\
+	- intro\
+- Professor\
+	- id*\
+	- &photo_path\
+	- name\
+	- courses (list)\
+- CourseEval\
+	- id*\
+	- courseID\
+	- userID\
+	- courseSemester\
+	- hours taken / week\
+	- difficulty\
+	- overall rate\
+	- &comment\
+- ProfEval\
+	- id*\
+	- profID\
+	- userID\
+	- overall rate\
+	- &comment\
+	- &course\
+	- &semester\
+\
+Functionalities:\
+- Admin:\
+	- database control UI: (add/remove/modify/find)\
+		- users\
+		- courses\
+		- prof\
+		- courseEval\
+		- profEval\
+\
+- Guests: (not logged in)\
+	- see latest 10 course reviews\
+	- see latest 10 prof reviews\
+	- see all course descriptions\
+	- &see average prof rate\
+	- &see average course rate\
+	- login\
+	- register\
+\
+- Users: (logged in)\
+	- change/update profiles\
+	- make course comments\
+	- make prof comments\
+	- see all course reviews\
+	- see all prof reviews\
+	- see all course rate\
+	- see all prof rate\
+	- logout\
+	- \'93like\'94/collect course/prof reviews\
+\
+\
+Frontend UI:\
+- Admin:\
+	- loginpage\
+	- frontpage\
+	- users\
+	- courses\
+	- profs\
+	- coursesEval\
+	- ProfEval\
+\
+\
+Work log:\
+2022 Jan 3 Mon:\
+- create db for admin: (* utf-8 not set, may not be able to insert Chinese chars)\
+	- wrote first version of design doc\
+	- create schema\
+	- create admin table, insert 2 rows of data\
+- create springboot project:\
+	- add dependencies, \
+	- configure application properties, \
+	- autogenerate mybatis mappers\
+	- test mybatis mappers with sql connection: \
+[problem: failed for a long time, ]\
+==> solution: turned out mapper.xml generated twice. Don\'92t know why, but remember to check that. \
+\
+2022 Jan 4 Tue:\
+- create Vue project\
+[problem: Eslint rules got overwritten on save]\
+==> solution: check if prettier is on. If so, turn it off in vscode extensions, and turn off all its related formatter settings in preferences.\
+	- installed elementUI\
+	- installed axios \
+- build up the admin login front page\
+- set up cross field on vue side\
+- set up cross field on sprint boot side\
+- finished login functionality, showed corresponding messages\
+\
+2022 Jan 7 Fri\
+- built Admin Layout (header and sidebar)\
+- configured the routes for admin layout\
+\
+2022 Jan 8 Sat\
+- add user in the database\
+[error: identifier expected. Reason: NEVER use java keywords as field name in mysql. Such as: class.]\
+- test insert user into sql\
+[error: sql grammer error: \'91-\'91 is not expected at the position, \'85]\
+[REASON: need `word1-word2` for words with \'91-\'91. \
+SOLUTION: (1) manually change sql, (2) avoid using \'91-\'91 in sql field names]\
+- finished show all user in the database\
+- finished delete a user in database, both frontend and backend\
+\
+2022 Jan 9 Sun\
+- add \'93edit\'94 operation to the users\
+- fixed minor bugs, clean console log\
+- implemented \'93logout\'94 feature\
+- created a new course dataset\
+- add all related data add, delete, modify, show on \'93courses\'94 dataset\
+- wrote a simple static html css admin home page\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

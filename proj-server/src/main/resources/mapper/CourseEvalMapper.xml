@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.projserver.dao.CourseEvalMapper" >
+  <resultMap id="BaseResultMap" type="com.example.projserver.entity.CourseEval" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="coursenumber" property="coursenumber" jdbcType="VARCHAR" />
+    <result column="profname" property="profname" jdbcType="VARCHAR" />
+    <result column="semester" property="semester" jdbcType="VARCHAR" />
+    <result column="rating" property="rating" jdbcType="INTEGER" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="user" property="user" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, coursenumber, profname, semester, rating, comment, user
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from courseeval
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUser" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    *
+    from courseeval
+    where user = #{user,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    *
+    from courseeval
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from courseeval
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.projserver.entity.CourseEval" >
+    insert into courseeval (id, coursenumber, profname, 
+      semester, rating, comment, 
+      user)
+    values (#{id,jdbcType=INTEGER}, #{coursenumber,jdbcType=VARCHAR}, #{profname,jdbcType=VARCHAR}, 
+      #{semester,jdbcType=VARCHAR}, #{rating,jdbcType=INTEGER}, #{comment,jdbcType=VARCHAR}, 
+      #{user,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.projserver.entity.CourseEval" >
+    insert into courseeval
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="coursenumber != null" >
+        coursenumber,
+      </if>
+      <if test="profname != null" >
+        profname,
+      </if>
+      <if test="semester != null" >
+        semester,
+      </if>
+      <if test="rating != null" >
+        rating,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="user != null" >
+        user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="coursenumber != null" >
+        #{coursenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="profname != null" >
+        #{profname,jdbcType=VARCHAR},
+      </if>
+      <if test="semester != null" >
+        #{semester,jdbcType=VARCHAR},
+      </if>
+      <if test="rating != null" >
+        #{rating,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="user != null" >
+        #{user,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.projserver.entity.CourseEval" >
+    update courseeval
+    <set >
+      <if test="coursenumber != null" >
+        coursenumber = #{coursenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="profname != null" >
+        profname = #{profname,jdbcType=VARCHAR},
+      </if>
+      <if test="semester != null" >
+        semester = #{semester,jdbcType=VARCHAR},
+      </if>
+      <if test="rating != null" >
+        rating = #{rating,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="user != null" >
+        user = #{user,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.projserver.entity.CourseEval" >
+    update courseeval
+    set coursenumber = #{coursenumber,jdbcType=VARCHAR},
+      profname = #{profname,jdbcType=VARCHAR},
+      semester = #{semester,jdbcType=VARCHAR},
+      rating = #{rating,jdbcType=INTEGER},
+      comment = #{comment,jdbcType=VARCHAR},
+      user = #{user,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
