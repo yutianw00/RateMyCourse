@@ -17,154 +17,173 @@ For how to launch the project locally, please scroll to the bottom.
 
 ### Client Side Preview Screenshots:
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec0a2vd9j31c00u0n4z.jpg)<br/>
+![](/readme-pics/client1.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec0qtdxrj31c00u07wj.jpg)<br/>
+![](/readme-pics/client2.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec19x0e6j31c00u0npe.jpg)<br/>
+![](/readme-pics/client3.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec1nmbt4j31c00u0hcf.jpg)<br/>
+![](/readme-pics/client4.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec1yc0gkj31c00u0kjm.jpg)<br/>
+![](/readme-pics/client5.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec29vvdtj31c00u0nok.jpg)<br/>
+![](/readme-pics/client6.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec2ixqk1j31c00u0qf8.jpg)<br/>
+![](/readme-pics/client7.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec31i06gj31c00u0wtw.jpg)<br/>
+![](/readme-pics/client8.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec3ozxt9j31c00u0qbv.jpg)<br/>
-
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1geec41r7onj31c00u047y.jpg)<br/>
+![](/readme-pics/client9.png)<br/>
 
 ### Admin Side Preview Screenshots:
 
-![](https://tva1.sinaimg.cn/large/006tNbRwly1g9hhhu4n7tj31c00u04qq.jpg)<br/>
+![](/readme-pics/admin1.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghrnrvgflvj31c00u0jzh.jpg)<br/>
+![](/readme-pics/admin2.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghrns4ycpkj31c00u0qjl.jpg)<br/>
+![](/readme-pics/admin3.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghrnsfearcj31c00u0axt.jpg)<br/>
+![](/readme-pics/admin4.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghrnsq6s3sj31c00u0tmu.jpg)<br/>
+![](/readme-pics/admin5.png)<br/>
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghrnszq403j31c00u07nq.jpg)<br/>
+![](/readme-pics/admin6.png)<br/>
+
+![](/readme-pics/admin7.png)<br/>
+
+<br/>
 
 ## Project Features
 
+<br/>
 
 ### Client/Users Features:
-- 
+#### For all clients:
+- Show course and professors' introductions in a sliding window (carousal) format
+- Show users' evaluations about courses and professors in a sliding window (carousal) format
+- Users sign up and log in
 
-
-
-- 音乐播放
-- 用户登录注册
-- 用户信息编辑、头像修改
-- 歌曲、歌单搜索
-- 歌单打分
-- 歌单、歌曲评论
-- 歌单列表、歌手列表分页显示
-- 歌词同步显示
-- 音乐收藏、下载、拖动控制、音量控制
-- 后台对用户、歌曲、歌手、歌单信息的管理
+#### For logged in users only:
+- Show username and welcome message on the header
+- Make comments about courses and professors
+- Show comments they made about courses and professors in a "sliding card" format
 
 <br/>
 
-## 技术栈
+### Administrator Features:
+- Log in and Log out
+- With a web graphical interface, 
+    - View all data; 
+    - add and delete some data in the database with a graphical web interface
 
-### 后端
-
-**SpringBoot + MyBatis**
-
-### 前端
-
-**Vue + Vue-Router + Vuex + Axios +  ElementUI**
 
 <br/>
 
-## 开发环境
+## Frameworks and APIs
 
-JDK： jdk-8u141
+### **Backend**:
+- SpringBoot
+- MyBatis (with mybatis generator)
 
-mysql：mysql-5.7.21-1-macos10.13-x86_64
-
-node：v12.4.0
-
-IDE：IntelliJ IDEA 2018、VSCode
+### **Frontend**:
+- Vue
+    - vue-router
+    - axios
+    - vuex
+    - ElementUI
 
 <br/>
 
-## 下载运行
+## Development Environment
 
-#### 1、下载项目到本地
+- Java: 16.0.1 2021-04-20
+
+- MySQL：Ver 8.0.25 for macos11 on x86_64
+
+- node：v12.4.0, npm: 6.9.0
+
+- IDE：IntelliJ IDEA 2021, VSCode
+
+<br/>
+
+## Download and run locally
+
+<br/>
+
+### 1. Clone the project to local
 
 ```bash
-git clone https://github.com/Yin-Hongwei/music-website.git
-```
-
-#### 2、下载数据库中记录的资源
-
-去【链接: https://pan.baidu.com/s/1Qv0ohAIPeTthPK_CDwpfWg 提取码: gwa4 】下载网站依赖的歌曲及图片，将 data 夹里的文件放到 music-server 文件夹下。
-
-> 注意：资源整理了一下，按照下面的截图存放。
-
-<img src="https://tva1.sinaimg.cn/large/008i3skNly1gsk65seqd8j30y00ocjt4.jpg" height="200px"/>
-
-#### 3、修改配置文件
-1）创建数据库
-将 `music-website/music-server/sql` 文件夹中的 `tp_music.sql` 文件导入数据库。
-
-2）修改用户名密码
-修改 `music-website/music-server/src/main/resources/application.properties` 文件里的 `spring.datasource.username` 和 `spring.datasource.password`；
-
-3）修改资源路径
-
-修改 `music-server/src/main/java/com/example/yin/constant/Constants.java` 文件中的 `RESOURCE_PATH`，**否则资源加载不了**。
-
-![](https://tva1.sinaimg.cn/large/008i3skNly1gske6w6kk8j33aq0u0wn2.jpg)
-
-#### 4、启动项目
-
-- **启动管理端**：进入 music-server 文件夹，运行下面命令启动服务器
-
-```js
-// 方法一
-./mvnw spring-boot:run
-
-// 方法二
-mvn spring-boot:run // 前提装了 maven
-```
-
-- **启动客户端**：进入 music-client 目录，运行下面命令
-
-```js
-npm install // 安装依赖
-
-npm run dev // 启动前台项目
-```
-
-- **启动管理端**：进入 music-manage 目录，运行下面命令
-
-```js
-npm install // 安装依赖
-
-npm run dev // 启动后台管理项目
+git clone https://github.com/yutianw00/RateMyCourse.git
 ```
 
 <br/>
 
-## 赞助
+### 2. Change the configuration files for the server
 
-如果此项目对你确实有帮助，欢迎给我打赏一杯咖啡～😄
+<br/>
+ 
+#### 2.1 Set up database:
 
+Create a new schema, and run the script `admin.sql`
 
+<br/>
 
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gsgm6jokvaj30gs0feadd.jpg)
+#### 2.2 Change database settings in server spring configuration file: 
 
+in `proj-server/src/main/resources/application.properties` file, set the following:
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/your-schema-name
+spring.datasource.username=your-username (e.g. root)
+spring.datasource.password=your-password
+```
 
+<br/>
 
-## License
+### 3. Install the dependencies for frontend
 
-Copyright (c) 2018 Yin-Hongwei 
+under the `proj-admin` folder, type command 
+
+```bash
+npm install
+```
+
+Similarly, under the `proj-client` folder, type command
+
+```bash
+npm install
+```
+
+*if an error occurs during the above step, make sure the node version is the same as shown above. The version info can be check via command `npm --version` and `node --version`.*
+
+<br/>
+
+### 4. Launch the project
+
+#### Launch the server: 
+
+in CLI, cd into `proj-server` folder and run
+
+```bash
+./mvnw spring-boot:run
+```
+
+#### Launch the client-side frontend:
+
+cd into `proj-client` folder and run
+
+```bash
+npm run dev 
+```
+
+#### Launch the admin-side frontend:
+
+cd into `proj-admin` folder and run
+
+```bash
+npm run dev 
+```
+
+<br/>
+
+## Author and Date
+Yutian.W, 2022
